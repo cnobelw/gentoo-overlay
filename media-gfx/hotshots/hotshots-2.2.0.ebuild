@@ -21,10 +21,8 @@ RDEPEND="${DEPEND}"
 
 DOCS=( CHANGELOG README )
 
-CMAKE_BUILD_DIR=${WORKDIR}/${P}/build
-
 src_install() {
-
+	CMAKE_BUILD_DIR=${WORKDIR}/${P}/build
 	cmake-utils_src_install
 	# doicon "${S}/images/${PN}.ico"
 	# make_desktop_entry "hotshots" "HotShots" "${PN}.ico" "Qt;Utility"
