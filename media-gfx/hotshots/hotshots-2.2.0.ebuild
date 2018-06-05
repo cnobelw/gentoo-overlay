@@ -32,6 +32,6 @@ src_compile() {
 }
 src_install() {
 	cd ${S}/build
-	emake install || die "install failed"
+	einstall || die "install failed"
 }
 
