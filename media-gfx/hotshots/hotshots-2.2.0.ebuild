@@ -21,7 +21,8 @@ RDEPEND="${DEPEND}"
 
 DOCS=( CHANGELOG README )
 
-CMAKE_BUILD_DIR=${WORKDIR}/build
+CMAKE_BUILD_DIR=${WORKDIR}/${P}/build
+
 src_install() {
 
 	cmake-utils_src_install
