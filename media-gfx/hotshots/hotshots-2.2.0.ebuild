@@ -23,7 +23,7 @@ DOCS=( CHANGELOG README )
 S=${WORKDIR}/${P}/build
 
 src_compile() {
-	eqmake5 -recursive ${S}/HotShots.pro || die "qmake failed"
+	eqmake4 -recursive ${S}/HotShots.pro || die "qmake failed"
 	emake || die "emake failed"
 }
 src_install() {
