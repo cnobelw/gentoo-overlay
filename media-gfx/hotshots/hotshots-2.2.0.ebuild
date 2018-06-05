@@ -23,11 +23,12 @@ DOCS=( CHANGELOG README )
 S=${WORKDIR}
 
 src_compile() {
-	eqmake4 -recursive ${S}/build/HotShots.pro || die "qmake failed"
+	cd ${S}/build 
+	eqmake4 -recursive HotShots.pro || die "qmake failed"
 	emake || die "emake failed"
 }
 src_install() {
-	cd ./build
+	cd ${S}/build
 	einstall || die "einstall failed"
 	# doicon "${S}/images/${PN}.ico"
 	# make_desktop_entry "hotshots" "HotShots" "${PN}.ico" "Qt;Utility"
