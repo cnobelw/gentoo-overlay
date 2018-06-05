@@ -6,7 +6,7 @@ inherit git-2 eutils cmake-utils
 
 DESCRIPTION="HotShots is an application for capturing screens."
 HOMEPAGE="https://github.com/cnobelw/gentoo-overlay"
-EGIT_REPO_URI="git@github.com:cnobelw/gentoo-overlay.git"
+EGIT_REPO_URI="https://github.com/cnobelw/gentoo-overlay.git"
 
 LICENSE="GPL-2 LGPL-2.1 CC-BY-3.0"
 SLOT="0"
