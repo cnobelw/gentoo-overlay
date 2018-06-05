@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
-inherit git-2 eutils cmake-utils
+inherit git-2 eutils qmake-utils
 
 DESCRIPTION="HotShots is an application for capturing screens."
 HOMEPAGE="https://github.com/cnobelw/gentoo-overlay"
