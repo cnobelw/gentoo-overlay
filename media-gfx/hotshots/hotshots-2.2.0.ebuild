@@ -20,10 +20,10 @@ DEPEND="dev-qt/qtcore
 RDEPEND="${DEPEND}"
 
 DOCS=( CHANGELOG README )
-S=${WORKDIR}/${P}/build
+S=${WORKDIR}/${P}
 
 src_compile() {
-	eqmake4 -recursive ${S}/HotShots.pro || die "qmake failed"
+	eqmake4 -recursive ${S}/build/HotShots.pro || die "qmake failed"
 	emake || die "emake failed"
 }
 src_install() {
