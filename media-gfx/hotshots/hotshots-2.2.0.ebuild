@@ -28,11 +28,11 @@ src_configure() {
 }
 src_compile() {
 	cd ${S}/build
-	emake || die "emake failed"
+	make || die "make failed"
 }
 src_install() {
 	cd ${S}/build
-	emake install || die "einstall failed"
+	make install || die "install failed"
 	# doicon "${S}/images/${PN}.ico"
 	# make_desktop_entry "hotshots" "HotShots" "${PN}.ico" "Qt;Utility"
 }
