@@ -22,7 +22,7 @@ RDEPEND="${DEPEND}"
 DOCS=( CHANGELOG README )
 
 src_install() {
-	insinto ./build
+	into ./build
 	cmake-utils_src_install
 	# doicon "${S}/images/${PN}.ico"
 	# make_desktop_entry "hotshots" "HotShots" "${PN}.ico" "Qt;Utility"
