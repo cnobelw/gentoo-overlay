@@ -32,7 +32,7 @@ src_compile() {
 }
 src_install() {
 	cd ${S}/build
-	make install || die "install failed"
+	sudo make install || die "install failed"
 	# doicon "${S}/images/${PN}.ico"
 	# make_desktop_entry "hotshots" "HotShots" "${PN}.ico" "Qt;Utility"
 }
