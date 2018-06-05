@@ -22,14 +22,17 @@ RDEPEND="${DEPEND}"
 DOCS=( CHANGELOG README )
 S=${WORKDIR}
 
-src_compile() {
+src_configure() {
 	cd ${S}/build 
 	eqmake4 -recursive HotShots.pro || die "qmake failed"
+}
+src_compile() {
+	cd ${S}/build
 	emake || die "emake failed"
 }
 src_install() {
 	cd ${S}/build
-	einstall || die "einstall failed"
+	emake install || die "einstall failed"
 	# doicon "${S}/images/${PN}.ico"
 	# make_desktop_entry "hotshots" "HotShots" "${PN}.ico" "Qt;Utility"
 }
