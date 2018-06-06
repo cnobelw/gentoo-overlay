@@ -25,20 +25,20 @@ RDEPEND="${DEPEND}"
 DOCS=( CHANGELOG README )
 S=${WORKDIR}
 
-#src_configure() {
-#	cd ${S}/build 
-#	eqmake4 -recursive HotShots.pro || die "qmake failed"
-#}
-#src_compile() {
-#	cd ${S}/build
-#	emake || die "make failed"
-#}
-src_prepare() {
-	cd ${S}/build
-	QT_SELECT=qt4 eqmake4 -recursive PREFIX=/usr/local
+src_configure() {
+	cd ${S}/build 
+	eqmake4 -recursive HotShots.pro || die "qmake failed"
 }
+src_compile() {
+	cd ${S}/build
+	emake || die "make failed"
+}
+#src_prepare() {
+#	cd ${S}/build
+#	QT_SELECT=qt4 eqmake4 -recursive PREFIX=/usr/local
+#}
 src_install() {
-	#cd ${S}/build
-	emake INSTALL_ROOT=${D}/build install || die "install failed"
+	cd ${S}/build
+	emake INSTALL_ROOT=${D} install || die "install failed"
 }
 
