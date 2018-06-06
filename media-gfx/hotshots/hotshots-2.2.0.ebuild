@@ -24,18 +24,15 @@ QT4_TARGET_SUBDIRS=(
 
 DOCS=( CHANGELOG README )
 # S=${WORKDIR}
-src_prepare() {
-	qt4-build_src_prepare
-}
 
-# src_configure() {
-#	cd ${S}/build 
-#	eqmake4 -recursive HotShots.pro || die "qmake failed"
-#}
-# src_compile() {
-#	cd ${S}/build
-#	emake || die "make failed"
-#}
+src_configure() {
+	cd ${S}/build 
+	eqmake4 -recursive HotShots.pro || die "qmake failed"
+}
+src_compile() {
+	cd ${S}/build
+	emake || die "make failed"
+}
 src_install() {
 #	cd ${S}/build
 #	emake || die "emake failed"
