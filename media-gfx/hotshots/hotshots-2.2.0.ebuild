@@ -18,12 +18,12 @@ DEPEND="dev-qt/qtcore
 		dev-qt/qtxml
 		dev-qt/qtnetwork"
 RDEPEND="${DEPEND}"
-QT4_TARGET_SUBDIRS=(
-    build
-)
+#QT4_TARGET_SUBDIRS=(
+#    build
+#)
 
 DOCS=( CHANGELOG README )
-#S=${WORKDIR}
+S=${WORKDIR}
 
 #src_configure() {
 #	cd ${S}/build 
@@ -34,10 +34,11 @@ DOCS=( CHANGELOG README )
 #	emake || die "make failed"
 #}
 src_prepare() {
+	cd ${S}/build
 	QT_SELECT=qt4 eqmake4 -recursive PREFIX=/usr/local
 }
 src_install() {
-#	cd ${WORKDIR}/build
+	#cd ${S}/build
 	emake INSTALL_ROOT=${D}/build install || die "install failed"
 }
 
