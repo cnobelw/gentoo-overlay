@@ -28,7 +28,7 @@ S=${WORKDIR}
 src_configure() {
 	cd ${S}/build 
 	eqmake4 -recursive HotShots.pro PREFIX=/usr/local || die "qmake failed"
-	econf --bindir=$PREFIX/bin
+	#econf --bindir=$PREFIX/bin
 }
 src_compile() {
 	cd ${S}/build
