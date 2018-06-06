@@ -18,6 +18,7 @@ DEPEND="dev-qt/qtcore
 		dev-qt/qtxml
 		dev-qt/qtnetwork"
 RDEPEND="${DEPEND}"
+SANDBOX_DISABLED=1
 
 DOCS=( CHANGELOG README )
 S=${WORKDIR}
