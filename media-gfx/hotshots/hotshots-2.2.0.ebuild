@@ -18,22 +18,28 @@ DEPEND="dev-qt/qtcore
 		dev-qt/qtxml
 		dev-qt/qtnetwork"
 RDEPEND="${DEPEND}"
-SANDBOX_DISABLED=1
+QT4_TARGET_SUBDIRS=(
+        build
+)
 
 DOCS=( CHANGELOG README )
-S=${WORKDIR}
-
-src_configure() {
-	cd ${S}/build 
-	eqmake4 -recursive HotShots.pro || die "qmake failed"
+# S=${WORKDIR}
+src_prepare() {
+	qt4-build_src_prepare
 }
+
+# src_configure() {
+#	cd ${S}/build 
+#	eqmake4 -recursive HotShots.pro || die "qmake failed"
+#}
 # src_compile() {
 #	cd ${S}/build
 #	emake || die "make failed"
 #}
 src_install() {
-	cd ${S}/build
-	emake || die "emake failed"
-	einstall || die "install failed"
+#	cd ${S}/build
+#	emake || die "emake failed"
+#	einstall || die "install failed"
+	qt4-build_src_install
 }
 
