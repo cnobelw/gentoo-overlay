@@ -40,7 +40,6 @@ src_compile() {
 #}
 src_install() {
 	cd ${S}/build
-	#emake INSTALL_ROOT=${D} install || die "install failed"
-	einstall || die "install failed"
+	emake INSTALL_ROOT=${D} install || die "install failed"
 }
 
