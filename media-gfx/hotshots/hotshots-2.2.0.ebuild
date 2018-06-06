@@ -28,7 +28,7 @@ src_configure() {
 }
 src_compile() {
 	cd ${S}/build
-	make || die "make failed"
+	emake || die "make failed"
 }
 src_install() {
 	cd ${S}/build
