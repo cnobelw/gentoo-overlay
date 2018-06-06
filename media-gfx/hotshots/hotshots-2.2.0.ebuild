@@ -19,24 +19,25 @@ DEPEND="dev-qt/qtcore
 		dev-qt/qtnetwork"
 RDEPEND="${DEPEND}"
 QT4_TARGET_SUBDIRS=(
-        build
+    build
 )
 
 DOCS=( CHANGELOG README )
-# S=${WORKDIR}
+#S=${WORKDIR}
 
-src_configure() {
-	cd ${S}/build 
-	eqmake4 -recursive HotShots.pro || die "qmake failed"
-}
-src_compile() {
-	cd ${S}/build
-	emake || die "make failed"
+#src_configure() {
+#	cd ${S}/build 
+#	eqmake4 -recursive HotShots.pro || die "qmake failed"
+#}
+#src_compile() {
+#	cd ${S}/build
+#	emake || die "make failed"
+#}
+src_prepare() {
+	QT_SELECT=qt4 eqmake4 -recursive PREFIX=/usr/local
 }
 src_install() {
-#	cd ${S}/build
-#	emake || die "emake failed"
-#	einstall || die "install failed"
-	qt4-build_src_install
+#	cd ${WORKDIR}/build
+	emake INSTALL_ROOT=${D}/build install || die "install failed"
 }
 
