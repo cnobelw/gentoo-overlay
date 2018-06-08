@@ -27,12 +27,12 @@ S=${WORKDIR}
 
 src_configure() {
 	cd ${S}/build 
-	eqmake4 -recursive HotShots.pro PREFIX=/usr/local || die "qmake failed"
+	qmake -recursive HotShots.pro PREFIX=/usr/local || die "qmake failed"
 	#econf --bindir=$PREFIX/bin
 }
 src_compile() {
 	cd ${S}/build
-	emake || die "make failed"
+	make || die "make failed"
 }
 #src_prepare() {
 #	cd ${S}/build
@@ -40,6 +40,6 @@ src_compile() {
 #}
 src_install() {
 	cd ${S}/build
-	emake install || die "install failed"
+	make install || die "install failed"
 }
 
