@@ -40,6 +40,6 @@ src_compile() {
 #}
 src_install() {
 	cd ${S}/build
-	emake install DESTDIR=${D} || die "install failed"
+	emake install INSTALL_ROOT=${D} || die "install failed"
 }
 
